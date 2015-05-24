@@ -26,12 +26,12 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
-  avatar: bio-photo.jpg
-  bio: "Describe your self."
-  email: 
-  disqus-shortname: 
-  twitter: #username
+  name: Dan Luchi
+  avatar: bio-photo-square.png
+  bio: "Web and mobile developer. Excited about how people and teams work and how to make them better."
+  email: dluchi@gmail.com
+  disqus-shortname: danluchi
+  twitter: looukey
   facebook: #username
   google:
     plus: #username
@@ -40,7 +40,7 @@ owner:
     ad-client: 
     ad-slot: 
   bing-verify: 
-  github: #username
+  github: danluchi
   stackoverflow: #http://stackoverflow.com/users/123456/username
   linkedin: #username
   xing: #username
