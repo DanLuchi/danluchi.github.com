@@ -10,8 +10,6 @@ image:
 date: 2017-07-17T11:42:13-04:00
 ---
 
-## Finding and Deleting Sidekiq Jobs in Rails
-
 Lately, I've been working a lot with background jobs running in Sidekiq. On several occasions, I needed to dig deeper into my job queues than what is practical to do through the sidekiq dashboard.
 
 Fortunately, Sidekiq has a [great API](https://github.com/mperham/sidekiq/wiki/API) thats makes diving deeper into your queues super easy.
