@@ -56,32 +56,32 @@ We recently spun up our infrastructure in two new regions: Dublin and Sydney and
 Here is the migration we ended up with:
 ```ruby
 up do
-    base = case ENV['AWS_DEFAULT_REGION']
-           when 'eu-west-1'
-             1_000_001
-           when 'ap-southeast-2'
-             1_000_002
-           else
-             1_000_000
-           end
+  base = case ENV['AWS_DEFAULT_REGION']
+         when 'eu-west-1'
+           1_000_001
+         when 'ap-southeast-2'
+           1_000_002
+         else
+           1_000_000
+         end
 
-    tables.each do |table|
-      sql = <<~SQL
-        alter sequence "#{table}_id_seq" increment 10 restart with #{base};
-      SQL
-      run(sql)
-    end
+  tables.each do |table|
+    sql = <<~SQL
+      alter sequence "#{table}_id_seq" increment 10 restart with #{base};
+    SQL
+    run(sql)
   end
+end
 
-  down do
-    tables.each do |table|
-      max = select(:id).from(table).order(:id).last.try(:[], :id) || 0
-      sql = <<~SQL
-        alter sequence "#{table}_id_seq" increment 1 restart with #{max+1};
-      SQL
-      run(sql)
-    end
+down do
+  tables.each do |table|
+    max = select(:id).from(table).order(:id).last.try(:[], :id) || 0
+    sql = <<~SQL
+      alter sequence "#{table}_id_seq" increment 1 restart with #{max+1};
+    SQL
+    run(sql)
   end
+end
 ```
 
 The `up` restarts the sequences for all of the tables at 1,000,000 + an offset for each of our two new regions and the `down` migration, resets the sequences to increment by 1 and restart at the current max value for the table.
