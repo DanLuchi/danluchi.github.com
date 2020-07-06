@@ -8,7 +8,7 @@ date: 2020-07-06T15:49:00-05:00
 If you’ve read anything about software testing, you’ve probably seen the Testing Pyramid. They have different layers, but they all convey the same idea: we should prefer unit tests to integration tests because they are faster and cheaper. I like this one from Martin Fowler’s blog because it’s not as rigid as most and I have less rigid views on testing than most.
 
 ![Test Pyramid](https://github.com/DanLuchi/danluchi.github.com/blob/master/images/test-pyramid.png?raw=true "Test Pyramid")
-Source: https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png
+[https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png](https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png)
 
 As front ends have gotten more complicated in the last few years, front end testing has become more and more important as business logic gets moved to the client. I’ve had difficulty adapting the traditional test pyramid for the front end development environment. A lot of the tests that I wanted to write didn’t seem to fit into the bucket of a “unit” or “integration” test and even when I backed into what should be a unit test vs an integration test, the distinction didn’t seem that useful or helpful.
 
